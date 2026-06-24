@@ -298,7 +298,7 @@ func main() {
 	}
 
 	var objs DnsCapObjects
-	if err := loadDnsCapObjects(&objs, nil); err != nil {
+	if err := LoadDnsCapObjects(&objs, nil); err != nil {
 		log.Fatalf("loadDnsCapObjects: %v", err)
 	}
 	defer objs.Close()
