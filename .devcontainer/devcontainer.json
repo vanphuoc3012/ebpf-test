@@ -1,0 +1,32 @@
+{
+    "name": "Go eBPF Development",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    "runArgs": [
+        "--net=host",
+        "--pid=host",
+        "--privileged"
+    ],
+    "features": {
+        "ghcr.io/devcontainers/features/node:2.1.0": {
+            "version": "22"
+        }
+    },
+    "mounts": [
+        "source=${localEnv:HOME}/.claude,target=/home/vscode/.claude,type=bind",
+        "source=${localEnv:HOME}/.ssh,target=/home/vscode/.ssh,readonly,type=bind"
+    ],
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "golang.go",
+                "vadimcn.vscode-lldb",
+                "anthropic.claude-code",
+                "ms-vscode.cpptools-extension-pack"
+            ]
+        }
+    },
+    "postCreateCommand": "npm install -g @anthropic-ai/claude-code",
+    "remoteUser": "vscode"
+}
