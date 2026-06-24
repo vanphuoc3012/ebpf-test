@@ -298,15 +298,15 @@ func main() {
 	}
 
 	var objs DnsCapObjects
-	if err := loadDnsCapObjects(&objs, nil); err != nil {
+	if err := LoadDnsCapObjects(&objs, nil); err != nil {
 		log.Fatalf("loadDnsCapObjects: %v", err)
 	}
 	defer objs.Close()
 
 	// Track all raw socket FDs so we can close them on exit.
 	var (
-		sockMu  sync.Mutex
-		sockFDs []int
+		sockMu   sync.Mutex
+		sockFDs  []int
 		attached = make(map[int]struct{}) // ifindex → already attached
 	)
 	defer func() {

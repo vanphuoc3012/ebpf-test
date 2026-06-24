@@ -14,3 +14,5 @@ bpf_bpfeb.go
 .vscode/
 *.swp
 *.swo
+*_bpfel.go
+*_bpfeb.go
