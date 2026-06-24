@@ -1,0 +1,16 @@
+# Compiled binaries
+xdp-ping
+dnscap/dnscap
+
+# eBPF compiled objects and generated Go bindings
+*.o
+bpf_bpfel.go
+bpf_bpfeb.go
+
+# Go build cache
+/vendor/
+
+# IDE
+.vscode/
+*.swp
+*.swo
