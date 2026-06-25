@@ -6,7 +6,9 @@
     "runArgs": [
         "--net=host",
         "--pid=host",
-        "--privileged"
+        "--privileged",
+        "--cap-add=CAP_BPF",
+        "--cap-add=CAP_SYS_ADMIN"
     ],
     "features": {
         "ghcr.io/devcontainers/features/node:2.1.0": {
@@ -28,5 +30,6 @@
         }
     },
     "postCreateCommand": "npm install -g @anthropic-ai/claude-code",
+    "postAttachCommand": "sudo mount -t debugfs debugfs /sys/kernel/debug;",
     "remoteUser": "vscode"
 }

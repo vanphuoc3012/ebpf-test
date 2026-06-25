@@ -305,8 +305,8 @@ func main() {
 
 	// Track all raw socket FDs so we can close them on exit.
 	var (
-		sockMu  sync.Mutex
-		sockFDs []int
+		sockMu   sync.Mutex
+		sockFDs  []int
 		attached = make(map[int]struct{}) // ifindex → already attached
 	)
 	defer func() {
